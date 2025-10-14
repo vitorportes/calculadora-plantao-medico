@@ -110,6 +110,20 @@ button:hover {
     transform: translateY(-2px);
 }
 
+#campos-calculo {
+    opacity: 0;
+    max-height: 0; /* Ajuda na transição vertical */
+    overflow: hidden; /* Garante que o conteúdo não vaze enquanto oculto */
+    transition: opacity 0.5s ease-out, max-height 0.7s ease-out; /* Transições mais longas para suavidade */
+}
+
+#campos-calculo.show {
+    opacity: 1;
+    max-height: 500px; /* Um valor alto o suficiente para caber o conteúdo */
+    /* Remove a margem superior indesejada se houver espaço extra */
+    margin-top: 20px; 
+}
+
 /* Container do resultado */
 #resultado-container {
     margin-top: 30px;
