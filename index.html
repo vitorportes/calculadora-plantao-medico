@@ -4,24 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora de Plantão Médico</title>
-
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="hidden">
+    
+    <div class="user-info-container">
+        <span id="user-email"></span>
+        <button id="logout-button" class="logout-btn">Sair</button>
+    </div>
 
-    <div class="container">
-        <header>
-            <h1>Calculadora de Pagamento de Plantão</h1>
-            <p>Preencha os dados para calcular o valor a ser pago.</p>
-        </header>
+    <main class="content-wrap">
+        <div class="container">
+            <header>
+                <h1>Calculadora de Pagamento de Plantão</h1>
+            </header>
 
-        <main>
             <form id="calculation-form">
                 <div class="form-group">
                     <label for="medico-select">Selecione o Médico:</label>
                     <select id="medico-select" required>
                         <option value="">-- Escolha um médico --</option>
-                        </select>
+                    </select>
                 </div>
 
                 <div class="form-group">
@@ -41,12 +44,13 @@
                 <h2>Valor a Pagar:</h2>
                 <p id="resultado-final">R$ 0,00</p>
             </div>
-        </main>
-    </div>
-    <footer class="main-footer">
-        <p>Desenvolvido por Vitor Portes Mangueira</p>
-    </footer>
+        </div>
 
+        <footer class="main-footer">
+            <p>Desenvolvido por Vitor Portes Mangueira</p>
+        </footer>
+    </main>
+    
     <script type="module" src="supabase-client.js"></script>
     <script type="module" src="script.js"></script>
 
