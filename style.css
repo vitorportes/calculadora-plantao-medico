@@ -110,18 +110,18 @@ button:hover {
     transform: translateY(-2px);
 }
 
-#campos-calculo {
+/* Estilos para os campos que aparecem dinamicamente (agora uma classe) */
+.campos-dinamicos {
     opacity: 0;
-    max-height: 0; /* Ajuda na transição vertical */
-    overflow: hidden; /* Garante que o conteúdo não vaze enquanto oculto */
-    transition: opacity 0.5s ease-out, max-height 0.7s ease-out; /* Transições mais longas para suavidade */
+    max-height: 0;
+    overflow: hidden;
+    transition: opacity 0.5s ease-out, max-height 0.7s ease-out;
 }
 
-#campos-calculo.show {
+.campos-dinamicos.show {
     opacity: 1;
-    max-height: 500px; /* Um valor alto o suficiente para caber o conteúdo */
-    /* Remove a margem superior indesejada se houver espaço extra */
-    margin-top: 20px; 
+    max-height: 500px;
+    margin-top: 20px;
 }
 
 /* Container do resultado */
