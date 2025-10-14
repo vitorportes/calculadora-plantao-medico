@@ -1,7 +1,12 @@
-/* Importa uma fonte mais moderna do Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
-/* Estilos gerais com um leve gradiente e a nova fonte */
+body.hidden .container,
+body.hidden .main-footer {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+
 body {
     font-family: 'Poppins', sans-serif;
     background-color: #f4f7f6;
