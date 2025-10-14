@@ -9,15 +9,17 @@ body.hidden .main-footer {
 
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: #f4f7f6;
-    background-image: linear-gradient(to top, #dfe9f3 0%, white 100%);
+    /* Gradiente mais sutil, sem o branco puro que causa a ilusão */
+    background-color: #eef1f5;
+    background-image: linear-gradient(180deg, #eef1f5 0%, #dfe9f3 100%);
     color: #4a4a4a;
     margin: 0;
-    padding: 20px;
+    /* Adiciona um padding para garantir espaçamento em telas menores */
+    padding: 40px 20px;
     display: flex;
-    flex-direction: column; /* Alterado para coluna para o rodapé funcionar bem */
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
+    justify-content: center;
     min-height: 100vh;
     box-sizing: border-box;
 }
@@ -142,4 +144,97 @@ button:hover {
 .main-footer p {
     font-size: 14px;
     color: #aaa;
+}
+
+header h1 {
+    text-align: center;
+}
+
+/* Estilo para o novo botão de Sair */
+.logout-btn {
+    width: auto; /* Sobrescreve a largura total dos outros botões */
+    padding: 10px 20px;
+    background-image: linear-gradient(to right, #e74c3c 0%, #c0392b 100%);
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.logout-btn:hover {
+    background-image: linear-gradient(to right, #c0392b 0%, #e74c3c 100%);
+    box-shadow: 0 2px 8px rgba(231, 76, 60, 0.4);
+}
+
+/* === NOVOS ESTILOS PARA O LOGOUT === */
+
+.user-info-container {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Espaçamento entre o email e o botão */
+}
+
+#user-email {
+    font-size: 14px;
+    color: #555;
+    font-weight: 600;
+}
+
+.logout-btn {
+    width: auto;
+    padding: 8px 16px;
+    font-size: 13px;
+    background-image: none; /* Remove o gradiente */
+    background-color: #f1f3f5; /* Um cinza claro */
+    color: #555;
+    border: 1px solid #ddd;
+    transition: all 0.2s ease;
+}
+
+.logout-btn:hover {
+    background-color: #e9ecef;
+    border-color: #bbb;
+    transform: translateY(0); /* Remove o efeito de levantar */
+    box-shadow: none; /* Remove a sombra */
+}
+
+@media (max-width: 600px) {
+
+    /* Em telas pequenas, o container de logout não é mais absoluto */
+    .user-info-container {
+        position: relative; /* Volta ao fluxo normal da página */
+        top: auto;
+        right: auto;
+        justify-content: center; /* Centraliza o email e o botão */
+        width: 100%;
+        margin-bottom: 20px; /* Adiciona um espaço abaixo dele, antes do card */
+    }
+
+    /* O conteúdo principal não precisa mais de um flex: 1 */
+    .content-wrap {
+        flex: none; 
+        width: 100%;
+    }
+
+    /* Reduz o padding do card principal para economizar espaço */
+    .container {
+        padding: 25px 20px;
+    }
+
+    /* Diminui um pouco a fonte do título e do resultado */
+    header h1 {
+        font-size: 22px;
+    }
+
+    #resultado-final {
+        font-size: 32px;
+    }
+
+    /* Garante que o rodapé ainda tenha algum espaço */
+    .main-footer {
+        padding-top: 0;
+    }
 }
